@@ -3,9 +3,10 @@ from flask import g, request, redirect, url_for
 
 def login_required(argumento):
   def real_decorator(function):
-    @wraps(function)
+    #@wraps(function)
     def wrapper(*args, **kwargs):
       #if g.user is None:
+      print(request.args['data'])
       if argumento == 2:
       #return redirect(url_for('login', next=request.url))
         print('ENTRO AL IF!!!')
