@@ -3,10 +3,12 @@
 # app.py
 import os
 from flask import Flask, request, render_template
+from accesos.usuario import accesos_usuario
 
 app = Flask(__name__)
 #cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+app.register_blueprint(accesos_usuario)
 
 @app.errorhandler(404)
 def not_found(e):
