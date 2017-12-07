@@ -4,10 +4,12 @@ from flask import Blueprint, request
 from config.database import engine_accesos, session_accesos
 from sqlalchemy.sql import select, text, and_
 from .models import Usuario
+from config.middleware import login_required
 
 accesos_usuario = Blueprint('accesos_usuario', __name__)
 
 @accesos_usuario.route('/accesos/usuario/listar', methods=['GET'])
+@login_required(1)
 def listar():
   conn = engine_accesos.connect()
   stmt = """
