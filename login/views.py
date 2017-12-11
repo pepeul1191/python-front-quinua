@@ -3,7 +3,7 @@ import json
 import datetime
 from flask import Blueprint, request, render_template, redirect, session
 from sqlalchemy.sql import select, and_, func
-from config.middleware import login_required
+from config.middleware import csrf_form
 from config.constants import constants
 from config.database import engine_accesos
 from accesos.models import Usuario
@@ -16,6 +16,7 @@ def index():
 	return render_template('login/index.html', constants = constants, data = json.dumps(data))
 
 @login.route('/login/acceder', methods=['POST'])
+@csrf_form()
 def acceder():
 	usuario = request.form['usuario']
 	contrasenia = request.form['contrasenia']
@@ -24,7 +25,7 @@ def acceder():
 	rpta = None
 	for r in conn.execute(stmt):
 		session['estado'] = 'autenticado'
-		session['usuario'] = 'XD'
+		session['usuario'] = usuario
 		session['tiempo'] = datetime.datetime.now()
 		rpta = r[0]
 	if int(rpta) == 1:
