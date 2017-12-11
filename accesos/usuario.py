@@ -9,7 +9,7 @@ from config.middleware import login_required
 accesos_usuario = Blueprint('accesos_usuario', __name__)
 
 @accesos_usuario.route('/accesos/usuario/listar', methods=['GET'])
-@login_required(1)
+@login_required(True)
 def listar():
   conn = engine_accesos.connect()
   stmt = """

@@ -25,7 +25,7 @@ def acceder():
 	rpta = None
 	for r in conn.execute(stmt):
 		session['estado'] = 'autenticado'
-		session['usuario'] = usuario
+		session['usuario'] = request.form['usuario']
 		session['tiempo'] = datetime.datetime.now()
 		rpta = r[0]
 	if int(rpta) == 1:
