@@ -11,28 +11,15 @@
   </script>
 {% endblock %}
 {% block js_bottom %}
-	<script type="text/javascript" src="{{constants['STATICS_URL']}}dist/login.min.js"></script>
+	<script type="text/javascript" src="{{constants['STATICS_URL']}}dist/error.min.js"></script>
 {% endblock %}
 {% block content %}
-<!--
-<div class="error-header"> </div>
-<div class="container ">
-  <section class="error-container text-center">
-    <h1>{{data['numero']}}</h1>
-    <div class="error-divider">
-      <h2>{{data['mensaje']}}</h2>
-      <p class="description">{{data['descripcion']}}</p>
-    </div>
-    <a href="{{constants['BASE_URL']}}" class="return-btn"><i class="fa fa-home"></i>Ir al Inicio</a>
-  </section>
-</div>
--->
 <main class="g-min-height-100vh g-flex-centered g-pa-15">
   <div class="text-center g-flex-centered-item g-position-rel g-pb-15">
     <div class="g-font-size-180 g-font-size-240--sm g-line-height-1 g-font-weight-600er g-color-gray-light-v4"><i class="{{data['icono']}}" aria-hidden="true"></i></div>
     <div class="g-absolute-centered">
       <h1 class="g-color-black g-mt-minus-8 mb-0">{{data['numero']}}</h1>
-      <h3 class="g-color-black g-mt-minus-8 mb-0">{{data['descripcion']}}</h3>
+      <h3 class="g-color-black g-mt-minus-8 mb-0">{{data['mensaje']}}</h3>
       <hr class="g-brd-gray-light-v3 g-my-15">
       <p class="g-font-size-18 mb-0"><a href="{{constants['BASE_URL']}}" class="g-color-black g-color-primary--hover g-text-no-underline--hover"> <i class="fa fa-home"></i>Ir al Inicio</a></p>
     </div>

@@ -89,6 +89,16 @@ gulp.task('layout', ['fonts', 'layout-css', 'layout-js']);
 
 gulp.task('error', function() {
     gulp.src([
+        MEDIA + 'bower_components/jquery/dist/jquery.min.js', 
+        MEDIA + 'bower_components/handlebars/handlebars.min.js',
+        MEDIA + 'layouts/blank.js'])
+    //.pipe(uglify())
+    .pipe(plumber())
+    .pipe(concatJs('error.min.js'))
+    .pipe(gulp.dest(DESTINO))//.pipe(gulp.dest(DESTINO + 'home'))
+    .pipe(livereload());
+
+    gulp.src([
         DESTINO + 'styles.min.css', 
         MEDIA + 'assets/error/index.css'])
     .pipe(plumber())
