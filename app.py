@@ -4,14 +4,16 @@
 import os
 from flask import Flask, request, render_template
 from login.views import login
+from error.views import error
 from config.constants import constants
 from accesos.usuario import accesos_usuario
 
 app = Flask(__name__)
 #cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
-app.register_blueprint(accesos_usuario)
 app.register_blueprint(login)
+app.register_blueprint(error)
+app.register_blueprint(accesos_usuario)
 
 @app.errorhandler(404)
 def not_found(e):

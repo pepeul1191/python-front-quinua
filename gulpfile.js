@@ -87,17 +87,13 @@ gulp.task('layout', ['fonts', 'layout-css', 'layout-js']);
 
 // -----------------------------------------
 
-gulp.task('error-css', function() {
+gulp.task('error', function() {
     gulp.src([
-        MEDIA + 'bower_components/bootstrap/dist/css/bootstrap.min.css',
-        MEDIA + 'bower_components/font-awesome/css/font-awesome.min.css', 
-        MEDIA + 'assets/fontastic/styles.css', 
+        DESTINO + 'styles.min.css', 
         MEDIA + 'assets/error/index.css'])
     .pipe(plumber())
     .pipe(concatCss('error.min.css'))
     .pipe(minifyCss())
-    .pipe(replace('../../../font-awesome/fonts/', BASE_URL + 'dist/assets/'))
-    .pipe(replace('../../../assets/fontastic/fonts/', 'assets/'))
     .pipe(gulp.dest(DESTINO));
 });
 
