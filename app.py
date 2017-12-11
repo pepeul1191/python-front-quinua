@@ -3,20 +3,22 @@
 # app.py
 import os
 from flask import Flask, request, render_template
+from login.views import login
 from accesos.usuario import accesos_usuario
 
 app = Flask(__name__)
 #cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.register_blueprint(accesos_usuario)
+app.register_blueprint(login)
 
 @app.errorhandler(404)
 def not_found(e):
-    return 'Error: Recurso no encontrado', 404
+  return 'Error: Recurso no encontrado', 404
 
 @app.errorhandler(500)
 def server_error(e):
-    return render_template('error/500.html'), 500
+  return render_template('error/500.html'), 500
 
 @app.route('/')
 def index():
@@ -26,14 +28,10 @@ def index():
 def test_conexion():
 	return 'Ok'
 
-@app.route('/login')
-def home():
-	return render_template('login/index.html')
-
 @app.after_request
 def apply_caching(response):
-    response.headers['Server'] = 'Python; Ubuntu; Flask; Werkzeug;'
-    return response
+  response.headers['Server'] = 'Python; Ubuntu; Flask; Werkzeug;'
+  return response
 
 if __name__ == '__main__':
 	app.run(debug=True, host='0.0.0.0', port=3000)
