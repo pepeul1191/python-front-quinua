@@ -9,10 +9,10 @@ accesos = Blueprint('accesos', __name__)
 @accesos.route('/accesos/', methods=['GET'])
 def index():
 	menu = [
-		{'url' : 'accesos', 'nombre' : 'Accesos'},
-    {'url' : 'maestros', 'nombre' : 'Maestros'},
-		{'url' : 'agricultores', 'nombre' : 'Agricultores'},
-		{'url' : 'estaciones', 'nombre' : 'Estaciones'},
+		{'url' : 'accesos/', 'nombre' : 'Accesos'},
+    {'url' : 'maestros/', 'nombre' : 'Maestros'},
+		{'url' : 'agricultores/', 'nombre' : 'Agricultores'},
+		{'url' : 'estaciones/', 'nombre' : 'Estaciones'},
   ]
 	items = [
 		{"subtitulo":"Opciones", "items":

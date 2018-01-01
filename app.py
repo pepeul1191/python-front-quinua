@@ -5,7 +5,7 @@ import os
 from flask import Flask, request, render_template
 from error.views import error
 from config.constants import constants
-# accesos
+#imports-accesos
 from accesos.views import accesos
 from accesos.item import accesos_item
 from accesos.modulo import accesos_modulo
@@ -14,11 +14,14 @@ from accesos.rol import accesos_rol
 from accesos.sistema import accesos_sistema
 from accesos.subtitulo import accesos_subtitulo
 from accesos.usuario import accesos_usuario
+#imports-maestros
+from maestros.views import maestros
 
 app = Flask(__name__)
 #cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.register_blueprint(error)
+#register-accesos
 app.register_blueprint(accesos)
 app.register_blueprint(accesos_item)
 app.register_blueprint(accesos_modulo)
@@ -27,6 +30,8 @@ app.register_blueprint(accesos_rol)
 app.register_blueprint(accesos_sistema)
 app.register_blueprint(accesos_subtitulo)
 app.register_blueprint(accesos_usuario)
+#register-accesos
+app.register_blueprint(maestros)
 
 @app.errorhandler(404)
 def not_found(e):
