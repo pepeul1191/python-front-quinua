@@ -1,6 +1,6 @@
 constants = {
   'BASE_URL' : 'http://localhost:3000/',
-  'STATICS_URL' : 'http://localhost:3000/static/',
+  'STATICS_URL' : 'http://localhost:81/quinua-static/',
   'CSRF' : 'mpt/sr6eS2AlCRHU7DVThMgFTN08pnfSDf/C94eZx7udfm0lvgaYWLYJttYPKzGKDTlXwVU/d2FOxbKkgNlsTw==',
   'ambiente' : 'desarrollo',
   'key' : 'Fdp6CVxpri1ga8kH',
