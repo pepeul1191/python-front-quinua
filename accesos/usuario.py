@@ -20,3 +20,15 @@ def logs(usuario_id):
 def obtener_usuario_correo(usuario_id):
   r = requests.get(constants['servicios']['accesos'] + 'usuario/obtener_usuario_correo/' + usuario_id)
   return r.text
+
+@accesos_usuario.route('/accesos/usuario/nombre_repetido', methods=['POST'])
+def nombre_repetido():
+  data = request.form['data']
+  r = requests.post(constants['servicios']['accesos'] + 'usuario/nombre_repetido?data=' + data)
+  return r.text
+
+@accesos_usuario.route('/accesos/usuario/correo_repetido', methods=['POST'])
+def correo_repetido():
+  data = request.form['data']
+  r = requests.post(constants['servicios']['accesos'] + 'usuario/correo_repetido?data=' + data)
+  return r.text
