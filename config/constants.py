@@ -6,7 +6,7 @@ constants = {
   'key' : 'Fdp6CVxpri1ga8kH',
   'servicios' : {
     'accesos' : 'http://localhost:5000/',
-    'agricultor' : 'http://localhost:3012/',
+    'agricultores' : 'http://localhost:3012/',
     'ubicaciones' : 'http://localhost:3011/',
     'archivos' : 'http://192.168.1.49:3031/',
     'ftp' : {

@@ -16,6 +16,7 @@ from accesos.subtitulo import accesos_subtitulo
 from accesos.usuario import accesos_usuario
 #imports-agricultores
 from agricultores.views import agricultores
+from agricultores.responsable import agricultores_responsable
 #imports-maestros
 from maestros.views import maestros
 from maestros.departamento import maestros_departamento
@@ -31,6 +32,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 app.register_blueprint(error)
 #register-agricutlores
 app.register_blueprint(agricultores)
+app.register_blueprint(agricultores_responsable)
 #register-accesos
 app.register_blueprint(accesos)
 app.register_blueprint(accesos_item)
