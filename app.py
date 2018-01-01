@@ -7,6 +7,7 @@ from error.views import error
 from config.constants import constants
 # accesos
 from accesos.views import accesos
+from accesos.modulo import accesos_modulo
 from accesos.sistema import accesos_sistema
 from accesos.usuario import accesos_usuario
 
@@ -15,6 +16,7 @@ app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.register_blueprint(error)
 app.register_blueprint(accesos)
+app.register_blueprint(accesos_modulo)
 app.register_blueprint(accesos_sistema)
 app.register_blueprint(accesos_usuario)
 
