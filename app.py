@@ -9,6 +9,7 @@ from config.constants import constants
 from accesos.views import accesos
 from accesos.modulo import accesos_modulo
 from accesos.sistema import accesos_sistema
+from accesos.subtitulo import accesos_subtitulo
 from accesos.usuario import accesos_usuario
 
 app = Flask(__name__)
@@ -18,6 +19,7 @@ app.register_blueprint(error)
 app.register_blueprint(accesos)
 app.register_blueprint(accesos_modulo)
 app.register_blueprint(accesos_sistema)
+app.register_blueprint(accesos_subtitulo)
 app.register_blueprint(accesos_usuario)
 
 @app.errorhandler(404)
