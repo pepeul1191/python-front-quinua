@@ -16,3 +16,9 @@ def guardar():
   data = request.form['data']
   r = requests.post(constants['servicios']['ubicaciones'] + 'distrito/guardar?data=' + data)
   return r.text
+
+@maestros_distrito.route('/maestros/distrito/buscar', methods=['GET'])
+def buscar():
+  nombre = request.args.get('distrito')
+  r = requests.get(constants['servicios']['ubicaciones'] + 'distrito/buscar?nombre=' + nombre)
+  return r.text
