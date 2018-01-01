@@ -17,6 +17,7 @@ from accesos.usuario import accesos_usuario
 #imports-agricultores
 from agricultores.views import agricultores
 from agricultores.responsable import agricultores_responsable
+from agricultores.asociacion import agricultores_asociacion
 #imports-maestros
 from maestros.views import maestros
 from maestros.departamento import maestros_departamento
@@ -33,6 +34,7 @@ app.register_blueprint(error)
 #register-agricutlores
 app.register_blueprint(agricultores)
 app.register_blueprint(agricultores_responsable)
+app.register_blueprint(agricultores_asociacion)
 #register-accesos
 app.register_blueprint(accesos)
 app.register_blueprint(accesos_item)
