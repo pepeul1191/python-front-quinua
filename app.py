@@ -17,6 +17,7 @@ from accesos.usuario import accesos_usuario
 #imports-maestros
 from maestros.views import maestros
 from maestros.departamento import maestros_departamento
+from maestros.provincia import maestros_provincia
 
 app = Flask(__name__)
 #cors = CORS(app)
@@ -34,6 +35,7 @@ app.register_blueprint(accesos_usuario)
 #register-accesos
 app.register_blueprint(maestros)
 app.register_blueprint(maestros_departamento)
+app.register_blueprint(maestros_provincia)
 
 @app.errorhandler(404)
 def not_found(e):
