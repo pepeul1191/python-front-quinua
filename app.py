@@ -21,6 +21,7 @@ from maestros.provincia import maestros_provincia
 from maestros.distrito import maestros_distrito
 #imports-estaciones
 from estaciones.unidad_medida import estaciones_unidad_medida
+from estaciones.tipo_estacion import estaciones_tipo_estacion
 
 app = Flask(__name__)
 #cors = CORS(app)
@@ -42,6 +43,7 @@ app.register_blueprint(maestros_provincia)
 app.register_blueprint(maestros_distrito)
 #register-estaciones
 app.register_blueprint(estaciones_unidad_medida)
+app.register_blueprint(estaciones_tipo_estacion)
 
 @app.errorhandler(404)
 def not_found(e):
