@@ -9,6 +9,8 @@ from config.constants import constants
 from accesos.views import accesos
 from accesos.item import accesos_item
 from accesos.modulo import accesos_modulo
+from accesos.permiso import accesos_permiso
+from accesos.rol import accesos_rol
 from accesos.sistema import accesos_sistema
 from accesos.subtitulo import accesos_subtitulo
 from accesos.usuario import accesos_usuario
@@ -20,6 +22,8 @@ app.register_blueprint(error)
 app.register_blueprint(accesos)
 app.register_blueprint(accesos_item)
 app.register_blueprint(accesos_modulo)
+app.register_blueprint(accesos_permiso)
+app.register_blueprint(accesos_rol)
 app.register_blueprint(accesos_sistema)
 app.register_blueprint(accesos_subtitulo)
 app.register_blueprint(accesos_usuario)
