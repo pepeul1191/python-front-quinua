@@ -15,3 +15,8 @@ def listar():
 def logs(usuario_id):
   r = requests.get(constants['servicios']['accesos'] + 'usuario/listar_accesos/' + usuario_id)
   return r.text
+
+@accesos_usuario.route('/accesos/usuario/obtener_usuario_correo/<usuario_id>', methods=['GET'])
+def obtener_usuario_correo(usuario_id):
+  r = requests.get(constants['servicios']['accesos'] + 'usuario/obtener_usuario_correo/' + usuario_id)
+  return r.text
