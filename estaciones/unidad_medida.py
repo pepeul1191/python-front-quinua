@@ -17,7 +17,7 @@ def guardar():
   r = requests.post(constants['servicios']['estaciones'] + 'unidad_medida/guardar?data=' + data)
   return r.text
 
-@estaciones_unidad_medida.route('/estaciones/unidad_medida/listar_select', methods=['POST'])
+@estaciones_unidad_medida.route('/estaciones/unidad_medida/listar_select', methods=['GET'])
 def listar_select():
-  r = requests.post(constants['servicios']['estaciones'] + 'unidad_medida/listar_select')
+  r = requests.get(constants['servicios']['estaciones'] + 'unidad_medida/listar_select')
   return r.text
