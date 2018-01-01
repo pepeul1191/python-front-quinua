@@ -14,6 +14,8 @@ from accesos.rol import accesos_rol
 from accesos.sistema import accesos_sistema
 from accesos.subtitulo import accesos_subtitulo
 from accesos.usuario import accesos_usuario
+#imports-agricultores
+from agricultores.views import agricultores
 #imports-maestros
 from maestros.views import maestros
 from maestros.departamento import maestros_departamento
@@ -27,6 +29,8 @@ app = Flask(__name__)
 #cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 app.register_blueprint(error)
+#register-agricutlores
+app.register_blueprint(agricultores)
 #register-accesos
 app.register_blueprint(accesos)
 app.register_blueprint(accesos_item)
