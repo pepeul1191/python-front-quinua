@@ -38,3 +38,14 @@ def guardar_usuario_correo():
   usuario = request.form['usuario']
   r = requests.post(constants['servicios']['accesos'] + 'usuario/guardar_usuario_correo?usuario=' + usuario)
   return r.text
+
+@accesos_usuario.route('/accesos/usuario/listar_sistemas/<usuario_id>', methods=['GET'])
+def listar_sistemas(usuario_id):
+  r = requests.get(constants['servicios']['accesos'] + 'sistema/usuario/' + usuario_id)
+  return r.text
+
+@accesos_usuario.route('/accesos/usuario/guardar_sistemas', methods=['POST'])
+def guardar_sistemas():
+  data = request.form['data']
+  r = requests.post(constants['servicios']['accesos'] + 'usuario/guardar_sistemas?data=' + data)
+  return r.text
