@@ -49,3 +49,25 @@ def guardar_sistemas():
   data = request.form['data']
   r = requests.post(constants['servicios']['accesos'] + 'usuario/guardar_sistemas?data=' + data)
   return r.text
+
+@accesos_usuario.route('/accesos/usuario/listar_roles/<sistema_id>/<usuario_id>', methods=['GET'])
+def listar_roles(sistema_id, usuario_id):
+  r = requests.get(constants['servicios']['accesos'] + 'usuario/listar_roles/' + sistema_id + '/' + usuario_id)
+  return r.text
+
+@accesos_usuario.route('/accesos/usuario/asociar_roles', methods=['POST'])
+def asociar_roles():
+  data = request.form['data']
+  r = requests.post(constants['servicios']['accesos'] + 'usuario/asociar_roles?data=' + data)
+  return r.text
+
+@accesos_usuario.route('/accesos/usuario/listar_permisos/<sistema_id>/<usuario_id>', methods=['GET'])
+def listar_permisos(sistema_id, usuario_id):
+  r = requests.get(constants['servicios']['accesos'] + 'usuario/listar_permisos/' + sistema_id + '/' + usuario_id)
+  return r.text
+
+@accesos_usuario.route('/accesos/usuario/asociar_permisos', methods=['POST'])
+def asociar_permisos():
+  data = request.form['data']
+  r = requests.post(constants['servicios']['accesos'] + 'usuario/asociar_permisos?data=' + data)
+  return r.text
