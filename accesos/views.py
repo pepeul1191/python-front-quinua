@@ -6,7 +6,7 @@ from config.middleware import csrf_form
 
 accesos = Blueprint('accesos', __name__)
 
-@accesos.route('/accesos', methods=['GET'])
+@accesos.route('/accesos/', methods=['GET'])
 def index():
 	menu = [
 		{'url' : 'accesos', 'nombre' : 'Accesos'},
