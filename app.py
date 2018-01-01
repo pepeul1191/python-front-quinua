@@ -18,12 +18,14 @@ from accesos.usuario import accesos_usuario
 from agricultores.views import agricultores
 from agricultores.responsable import agricultores_responsable
 from agricultores.asociacion import agricultores_asociacion
+from agricultores.campo import agricultores_campo
 #imports-maestros
 from maestros.views import maestros
 from maestros.departamento import maestros_departamento
 from maestros.provincia import maestros_provincia
 from maestros.distrito import maestros_distrito
 #imports-estaciones
+from estaciones.views import estaciones
 from estaciones.unidad_medida import estaciones_unidad_medida
 from estaciones.tipo_estacion import estaciones_tipo_estacion
 
@@ -35,6 +37,7 @@ app.register_blueprint(error)
 app.register_blueprint(agricultores)
 app.register_blueprint(agricultores_responsable)
 app.register_blueprint(agricultores_asociacion)
+app.register_blueprint(agricultores_campo)
 #register-accesos
 app.register_blueprint(accesos)
 app.register_blueprint(accesos_item)
@@ -50,6 +53,7 @@ app.register_blueprint(maestros_departamento)
 app.register_blueprint(maestros_provincia)
 app.register_blueprint(maestros_distrito)
 #register-estaciones
+app.register_blueprint(estaciones)
 app.register_blueprint(estaciones_unidad_medida)
 app.register_blueprint(estaciones_tipo_estacion)
 

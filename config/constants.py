@@ -18,5 +18,6 @@ constants = {
       'public' : 'http://192.168.1.49:3031/'
      },
     'estaciones' : 'http://localhost:3025/',
+    'sensores' : 'http://localhost:3035/',
   }
 }
