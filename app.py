@@ -29,6 +29,8 @@ from estaciones.views import estaciones
 from estaciones.estacion import estaciones_estacion
 from estaciones.unidad_medida import estaciones_unidad_medida
 from estaciones.tipo_estacion import estaciones_tipo_estacion
+#imports-reportes
+from reportes.reporte import reportes_reporte
 
 app = Flask(__name__)
 #cors = CORS(app)
@@ -58,6 +60,8 @@ app.register_blueprint(estaciones)
 app.register_blueprint(estaciones_estacion)
 app.register_blueprint(estaciones_unidad_medida)
 app.register_blueprint(estaciones_tipo_estacion)
+#register-resportes
+app.register_blueprint(reportes_reporte)
 
 @app.errorhandler(404)
 def not_found(e):
