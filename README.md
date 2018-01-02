@@ -13,3 +13,14 @@ Instalación de dependencias:
     $ virtualenv -p python3 <<nombre_ambiente>>
     $ source bin/activate
     $ pip install -r requirements.txt
+
+### Fuentes
+
+    + https://github.com/pepeul1191/python-gestion
+    + https://pypi.python.org/pypi/pysftp
+    + http://flask.pocoo.org/docs/0.12/quickstart/
+    + http://werkzeug.pocoo.org/docs/0.14/datastructures/#werkzeug.datastructures.FileStorage
+
+Thanks/Credits
+
+    Pepe Valdivia: developer Software Web Perú [http://softweb.pe]
