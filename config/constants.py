@@ -8,14 +8,14 @@ constants = {
     'accesos' : 'http://localhost:5000/',
     'agricultores' : 'http://localhost:3012/',
     'ubicaciones' : 'http://localhost:3011/',
-    'archivos' : 'http://192.168.1.49:3031/',
+    'archivos' : 'http://192.168.1.51:3031/',
     'ftp' : {
-      'dominio' : '192.168.1.49',
+      'dominio' : '192.168.1.51',
       'puerto' : 22,
       'usuario' : 'pepe',
       'contrasenia' : 'kiki123',
-      'ruta' : '/home/pepe/Documentos/python/archivos/static/',
-      'public' : 'http://192.168.1.49:3031/'
+      'ruta' : '/home/pepe/Documentos/py2/archivos/static/',
+      'public' : 'http://192.168.1.51:3031/'
      },
     'estaciones' : 'http://localhost:3025/',
     'sensores' : 'http://localhost:3035/',
