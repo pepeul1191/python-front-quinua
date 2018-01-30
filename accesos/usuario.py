@@ -27,6 +27,12 @@ def nombre_repetido():
   r = requests.post(constants['servicios']['accesos'] + 'usuario/nombre_repetido?data=' + data)
   return r.text
 
+@accesos_usuario.route('/accesos/usuario/contrasenia_repetida', methods=['POST'])
+def contrasenia_repetida():
+  data = request.form['data']
+  r = requests.post(constants['servicios']['accesos'] + 'usuario/contrasenia_repetida?data=' + data)
+  return r.text
+
 @accesos_usuario.route('/accesos/usuario/correo_repetido', methods=['POST'])
 def correo_repetido():
   data = request.form['data']
